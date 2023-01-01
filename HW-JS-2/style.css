@@ -1,0 +1,15 @@
+div {
+    width: 50%;
+    border: solid black 1px;
+    margin: auto;
+    padding: 2rem;
+    background-color: gray;
+  }
+  
+  .even {
+    background-color: red;
+  }
+  
+  .odd {
+    background-color: green;
+  }
