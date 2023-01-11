@@ -19,3 +19,4 @@ function generateHashtag(str) {
     }
     return '#' + string;
   }
+  
