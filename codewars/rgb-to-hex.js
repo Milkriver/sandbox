@@ -11,5 +11,7 @@
 
 function rgb(r, g, b) {
     const validateValue = (value) => (value <= 0 ? '00' : value > 255 ? 255 : value);
-    return (validateValue(r).toString(16) + validateValue(g).toString(16) + validateValue(b).toString(16)).toUpperCase();
+    return (
+        validateValue(r).toString(16) + validateValue(g).toString(16) + validateValue(b).toString(16))
+        .toUpperCase();
 }
