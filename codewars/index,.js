@@ -14,3 +14,16 @@ function minMinMax(array) {
   return [Math.min(...array), minimumAbsent, Math.max(...array)]
 }
 
+const renderTimeSlot = (element) => (
+  <label className='custom-radio booking-form__date' key={element.time}>
+    <input
+      type='radio'
+      id={element.time}
+      name='date'
+      required
+      disabled={!element.isAvailable}
+      readOnly
+    />
+    <span className='custom-radio__label'>{element.time}</span>
+  </label>
+);
