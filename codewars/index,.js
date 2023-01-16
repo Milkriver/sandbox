@@ -27,3 +27,15 @@ const renderTimeSlot = (element) => (
     <span className='custom-radio__label'>{element.time}</span>
   </label>
 );
+
+const getToken = () => {
+  const token = localStorage.getItem(AUTH_TOKEN_KEY_NAME);
+  return token ?? '';
+};
+const saveToken = (token) => {
+  localStorage.setItem(AUTH_TOKEN_KEY_NAME, token);
+};
+
+const dropToken = () => {
+  localStorage.removeItem(AUTH_TOKEN_KEY_NAME);
+};
