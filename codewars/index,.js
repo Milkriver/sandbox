@@ -39,3 +39,21 @@ const saveToken = (token) => {
 const dropToken = () => {
   localStorage.removeItem(AUTH_TOKEN_KEY_NAME);
 };
+
+const renderGenreList = (genre) => (
+  <li className="filter__item" key={genre.name}>
+    <input type="radio" name="type" id={genre.type} checked={currentGenre === genre.type} readOnly/>
+    <label className="filter__label" htmlFor={genre.type} onClick={() => changeGenreHandler(genre.type)}>
+      <svg className="filter__icon" width={genre.iconWidth} height={genre.iconHeight} aria-hidden="true">
+        <use xlinkHref={genre.xlinkHref}></use>
+      </svg><span className="filter__label-text">{genre.name}</span>
+    </label>
+  </li>
+);
+const renderLevelList = (level) => (
+  <li className="filter__item" key={level.name}>
+    <input type="radio" name="level" id={level.name} checked={currentLevel === level.type} readOnly/>
+    <label className="filter__label" htmlFor={level.name} onClick={() => changeLevelHandler(level.type)}><span className="filter__label-text">{level.name}</span>
+    </label>
+  </li>
+);
