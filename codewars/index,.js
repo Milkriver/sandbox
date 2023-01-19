@@ -50,10 +50,5 @@ const renderGenreList = (genre) => (
     </label>
   </li>
 );
-const renderLevelList = (level) => (
-  <li className="filter__item" key={level.name}>
-    <input type="radio" name="level" id={level.name} checked={currentLevel === level.type} readOnly/>
-    <label className="filter__label" htmlFor={level.name} onClick={() => changeLevelHandler(level.type)}><span className="filter__label-text">{level.name}</span>
-    </label>
-  </li>
-);
+
+
