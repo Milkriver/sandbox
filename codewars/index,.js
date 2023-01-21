@@ -58,3 +58,5 @@ const renderLevelList = (level) => (
   </li>
 );
 
+const filterArray = (array) => array.filter((element) => element.id);
+
