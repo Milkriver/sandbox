@@ -60,3 +60,7 @@ const renderLevelList = (level) => (
 
 const filterArray = (array) => array.filter((element) => element.id);
 
+const renderRadiogroup = Object.keys(answers).filter((name) => answers[name]).map((name) => (
+  <Radio label={answers[name]} key={name} value={name} />
+));
+
