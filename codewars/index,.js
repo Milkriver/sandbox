@@ -64,3 +64,6 @@ const renderRadiogroup = Object.keys(answers).filter((name) => answers[name]).ma
   <Radio label={answers[name]} key={name} value={name} />
 ));
 
+const renderCheckboxGroup = Object.keys(answers).filter((name) => answers[name]).map((name) => (
+  <Checkbox label={answers[name]} key={name} name={`${name}_correct`} checked={isSetTrue(multiValue[`${name}_correct`])} />
+));
