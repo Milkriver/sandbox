@@ -69,3 +69,5 @@ const renderCheckboxGroup = Object.keys(answers).filter((name) => answers[name])
 ));
 
 const getRandomInteger = (max) => Math.floor(Math.random() * max);
+
+export const isBooleanTrue = (value) => value ? 'true' : 'false';
