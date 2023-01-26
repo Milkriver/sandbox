@@ -70,4 +70,6 @@ const renderCheckboxGroup = Object.keys(answers).filter((name) => answers[name])
 
 const getRandomInteger = (max) => Math.floor(Math.random() * max);
 
+export const getRagingPercentage = (rating) => `${Math.round(rating) / 5 * 100}%`;
+
 export const isBooleanTrue = (value) => value ? 'true' : 'false';
