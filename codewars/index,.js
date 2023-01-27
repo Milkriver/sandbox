@@ -75,3 +75,16 @@ const getRagingPercentage = (rating) => `${Math.round(rating) / 5 * 100}%`;
 const isBooleanTrue = (value) => value ? 'true' : 'false';
 
 const isSetTrue = (value) => value === 'true';
+
+const sortOfferList = (selectedSortOption, offers) => {
+  switch (selectedSortOption) {
+    case sortOptionList.risingPrice:
+      return offers.sort((offer1, offer2) => offer1.price - offer2.price);
+    case sortOptionList.decliningPrice:
+      return offers.sort((offer1, offer2) => offer2.price - offer1.price);
+    case sortOptionList.topRating:
+      return offers.sort((offer1, offer2) => offer2.rating - offer1.rating);
+    default:
+      return offers;
+  }
+};
