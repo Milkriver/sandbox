@@ -70,9 +70,13 @@ const renderCheckboxGroup = Object.keys(answers).filter((name) => answers[name])
 
 const getRandomInteger = (max) => Math.floor(Math.random() * max);
 
-export const getRagingPercentage = (rating) => `${Math.round(rating) / 5 * 100}%`;
+const getRagingPercentage = (rating) => `${Math.round(rating) / 5 * 100}%`;
 
-export const sortOfferList = (selectedSortOption, offers) => {
+const isBooleanTrue = (value) => value ? 'true' : 'false';
+
+const isSetTrue = (value) => value === 'true';
+
+const sortOfferList = (selectedSortOption, offers) => {
   switch (selectedSortOption) {
     case sortOptionList.risingPrice:
       return offers.sort((offer1, offer2) => offer1.price - offer2.price);
@@ -82,5 +86,20 @@ export const sortOfferList = (selectedSortOption, offers) => {
       return offers.sort((offer1, offer2) => offer2.rating - offer1.rating);
     default:
       return offers;
+  }
+};
+
+export const getMovieStarRating = (rating) => {
+  rating = Number(rating);
+  if (rating < 3) {
+    return 'Bad';
+  } else if (rating < 5) {
+    return 'Normal';
+  } else if (rating < 8) {
+    return 'Good';
+  } else if (rating < 10) {
+    return 'Very Good';
+  } else {
+    return 'Awesome';
   }
 };
